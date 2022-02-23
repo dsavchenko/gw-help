@@ -1,5 +1,5 @@
 This interface uses public data from https://gw-openscience.org 
-It also use skymaps from
+It also uses skymaps from
 - https://dcc.ligo.org/LIGO-P1800381/public for GWTC1 events
 - "PublicationSamples" skymaps from https://dcc.ligo.org/LIGO-P2000223/public/ for GWTC2 events
 - Mixed-model skymaps from https://zenodo.org/record/5546663 for GWTC3
