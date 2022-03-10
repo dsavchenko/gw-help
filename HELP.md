@@ -8,8 +8,13 @@ It also uses skymaps from
 ## Skymap and catalog
 To plot the probability contours of the GW events in the specified time range:
    1. Specify the time range in general parameter form.
+      ![](im/common_long.png)
    2. Select contour levels to plot.
+      ![](im/skymap_param.png)
+
 The result is as follows:
+
+![](im/skymap.png)
 
 To download archive with raw MOC skymaps and event catalog. 
 
@@ -21,10 +26,14 @@ In more advanced mode one can restrict the returned events to those, whose proba
    2. Select cone-search mode
    3. Set probability level and radius
 
+![Cone search result example](im/skymap_cone.png)
+
 ## Time series data
 This mode is used to obtain strain time-series for some GW event.
 1. Specify GW event name and press Resolve button – the time interval will be filled accordingly
+   ![](im/resolve.png)
 2. Select GW detector and specify bandpass limits
+   
 
 The result is:
 
@@ -34,3 +43,4 @@ Upper plot shows raw data and the bottom one shows bandpassed and whitened data.
 It is also possible to obtain the Constant-Q transform of the data. The steps are similar to the time-series case. 
 
 The result looks like the following:
+![](im/sgram.png)
