@@ -3,7 +3,8 @@ This interface provides the analysis of publicly available gravitational wave da
 ## Source query panel
 
 The general MMODA interface for all instruments has a top-level selection panel that allows to specify sky position of an astronomical source and/or time interval for the analysis. For the gravitational wave events, it is the time interval that is most important. It provides unique identification of known events. The top common parameter panel of the MMODA interface allows to directly enter the time interval in the dedicated parameter windows.  
-      ![](im/common_long.png)
+      ![](im/frontend_top_pane_gw.png)
+      
 Alternatively, the time intervals for the known gravitational wave events can be found using the name resolver. The user can enter the name of the event (e.g. GW170817) and click "resolve" button. 
 
 It also uses skymaps from
