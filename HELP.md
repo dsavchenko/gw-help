@@ -1,4 +1,9 @@
-This interface uses public data from https://gw-openscience.org 
+This interface provides the analysis of publicly available gravitational wave data of LIGO and VIRGO detectors available from https://gw-openscience.org. The data analysis workflows implemented as online services follow the methods of the tutorial analysis notebooks of https://www.gw-openscience.org/tutorials/ . The services provides a possibility to execute the tutorial notebooks for any time interval (with or without known gravitational wave events) and any detector. 
+
+## Source query panel
+
+The general MMODA interface for all instruments has a top-level selection panel that allows to specify sky position of an astronomical source and/or time interval for the analysis. 
+
 It also uses skymaps from
 - https://dcc.ligo.org/LIGO-P1800381/public for GWTC1 events
 - "PublicationSamples" skymaps from https://dcc.ligo.org/LIGO-P2000223/public/ for GWTC2 events
