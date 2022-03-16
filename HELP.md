@@ -46,7 +46,11 @@ The result display includes two panels, with the upper plot showing the raw data
 Similarly to the skymap display, the time series data can be downloaded by clicking on "Download" button. 
 
 ## Spectrogram
-It is also possible to obtain the Constant-Q transform of the data. The steps are similar to the time-series case. 
+It is also possible to obtain the spectrogram: the time evolution of the frequency, obtained via Constant-Q transform of the data. To generate the spectrogram, select the "Spectrogram" in the side parameter panel and specify the lower and upper Q values:
 
-The result looks like the following:
+![](im/spectrogram_panel.png)
+
+Press "Submit" button to generate the data product:
 ![](im/sgram.png)
+
+Similarly to the sky map and time series, the spectrogram can be downloaded by pressing the "Download" button. It can be also retrieved using a Python API code that can be found by pressing the "API code" button. The API code can be also executed online by pressing the "Publish on Renku" button. 
