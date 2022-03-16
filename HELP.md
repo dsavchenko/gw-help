@@ -13,45 +13,37 @@ Alternatively, the time intervals for the known gravitational wave events can be
 ## Skymap and catalog
 
 The interface allows to find known gravitational wave events within a specified time interval and visualise their sky localisations. This can be done by selecting the "skymap and catalog" in the side parameter panel. It is also possible to perform a cone search for events around a selected sky direction by selecting the "cone search" and specifying the angular width of the search cone. Otherwise, an all-sky search can be preformed:   
-      ![](im/skymap_param.png)
-The analysis uses the skymaps from
-- https://dcc.ligo.org/LIGO-P1800381/public for the first Gravitational Wave Transient Catalog (GWTC1) events as well as "PublicationSamples" skymaps from https://dcc.ligo.org/LIGO-P2000223/public/ for GWTC2 events and mixed-model skymaps from https://zenodo.org/record/5546663 for GWTC3. The original skymap data are data cubes corresponding to the probability density function (PDF) for event localisation in RA-DEC-distance parameter space. The online data analysis service presents the integral of the PDF in distance in the form of a contour plot:
+![Cone search parameters](im/conesearch_param.png)
+
+(WHAT IS THE "LEVEL THRESHOLD"?) 
+
+The analysis uses the skymaps from https://dcc.ligo.org/LIGO-P1800381/public for the first Gravitational Wave Transient Catalog (GWTC1) events as well as "PublicationSamples" skymaps from https://dcc.ligo.org/LIGO-P2000223/public/ for GWTC2 events and mixed-model skymaps from https://zenodo.org/record/5546663 for GWTC3. The original skymap data are data cubes corresponding to the probability density function (PDF) for event localisation in RA-DEC-distance parameter space. The online data analysis service presents the integral of the PDF in distance in the form of a contour plot:
 ![](im/skymap.png)
 
 The probability levels for the contour plot can be specified in the side parameter panel. The result display window has a number of buttons that allow to manipulate the skymap data products. The "Download" button provides a possibility to download the original skymap PDF for all the displayed events. The MMODA interface can be accessed from Python notebooks, using a an API. The API code for the skymap can be retreived by pressing the "API code" button. The result will be a piece of a Python code like this:
+![API code](im/api_skymap.png)
 
+It is possibly to directly deploy a Jupyter notebook with the API code to retreive the data product at one of the online notebook servers. The MMODA interface currently provides a possibility to run notebooks on Renku platform provided by Swiss Data Science Centre https://renkulab.io/. This can be done by pressing the "Publish on Renku" button.
 
-
-Use Download button to get tar archive with raw MOC skymaps and event catalog ascii file. 
-
-The Catalog button shows the list of events with basic parameters
+The list of events displayed in the image can be retreived by pressing the "Catalog" button
 ![Catalog view](im/catalog_view.png)
 
-### Cone search
-In more advanced mode one can restrict the returned events to those, whose probabilty contours intersect with circular region on sky:
-   1. In addition to the time range specify coordinates of sky direction
-   2. Select cone-search mode
-   3. Set probability level and radius
-
-![Cone search parameters](im/conesearch_param.png)
-
-The resulting skymap contains only subset of events:
-
-![Cone search result example](im/skymap_cone.png)
+The catalog table lists the event name, its GPS time aws well as the masses of the merging bodies in the coalescing binary system.
 
 ## Time series data
-This mode is used to obtain strain time-series for some GW event.
-1. Specify GW event name and press Resolve button – the time interval will be filled accordingly
-   ![](im/resolve.png)
-2. Select GW detector and specify bandpass limits
-   ![](im/strain_param.png)
-   
 
-The result is:
+Apart from sky maps, it is possible to obtain strain time-series for different gravitational wave detectors. This can be done by selecting "Strain time series" button in the side parameter panel:
+
+![](im/strain_param.png)
+   
+This will display additional option for whitening of the time series data. It is possible to select the bandpass filter by specifying minimal and maximal frequency. 
+Pressing the "Submit" button will launch the online analysis and produce the result that will look like this:
 
 ![Strain timeseries](im/strain.png)
 
-Upper plot shows raw data and the bottom one shows bandpassed and whitened data. The corresponding .h5 files can be downloaded.
+The result display includes two panels, with the upper plot showing the raw data and the bottom one showing the filtered and whitened data. 
+
+Similarly to the skymap display, the time series data can be downloaded by clicking on "Download" button. 
 
 ## Spectrogram
 It is also possible to obtain the Constant-Q transform of the data. The steps are similar to the time-series case. 
