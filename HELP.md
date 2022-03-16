@@ -1,33 +1,26 @@
-This interface provides the analysis of publicly available gravitational wave data of LIGO and VIRGO detectors available from https://gw-openscience.org. The data analysis workflows implemented as online services follow the methods of the tutorial analysis notebooks of https://www.gw-openscience.org/tutorials/ . The services provides a possibility to execute the tutorial notebooks for any time interval 
-(with or without known gravitational wave events)  
+This interface provides the analysis of publicly available gravitational wave data of LIGO and VIRGO detectors available from https://gw-openscience.org. The data analysis workflows implemented as online services follow the methods of the tutorial analysis notebooks of https://www.gw-openscience.org/tutorials/ . The services provides a possibility to execute the tutorial notebooks for an arbitrary time interval 
+(with or without known gravitational wave events) and detector. 
 <!-- This is not true. Strain data exist only around events (4096 sec or so) -->
-and any detector. 
 
-It also uses skymaps from
-- https://dcc.ligo.org/LIGO-P1800381/public for GWTC1 events
-- "PublicationSamples" skymaps from https://dcc.ligo.org/LIGO-P2000223/public/ for GWTC2 events
-- Mixed-model skymaps from https://zenodo.org/record/5546663 for GWTC3
   
 ## Source query panel
 
 The general MMODA interface for all instruments has a top-level selection panel that allows to specify sky position of an astronomical source and/or time interval for the analysis. For the gravitational wave events, it is the time interval that is most important. It provides unique identification of known events. The top common parameter panel of the MMODA interface allows to directly enter the time interval in the dedicated parameter windows.  
       ![](im/frontend_top_pane_gw.png)
       
-Alternatively, the time intervals for the known gravitational wave events can be found using the name resolver. The user can enter the name of the event (e.g. GW170817) and click "resolve" button. 
+Alternatively, the time intervals for the known gravitational wave events can be found using the name resolver. The user can enter the name of the event (e.g. GW170817) and click "resolve" button. If the event is known to the resolver, the time interval of the event will appear in the time selection parameter windows. By default, the sky direction will not be resolved (because of the limited sky localisation capability of the gravitationalwave detectors). The GW170817 event for which the direction is known is an exception. 
 
 ## Skymap and catalog
-To plot the probability contours of the GW events in the specified time range:
-   1. Specify the time range in general parameter form.
-   
-      ![](im/common_long.png)
-   
-   2. Select contour levels to plot.
-   
+
+The interface allows to find known gravitational wave events within a specified time interval and visualise their sky localisations. This can be done by selecting the "skymap and catalog" in the side parameter panel. It is also possible to perform a cone search for events around a selected sky direction by selecting the "cone search" and specifying the angular width of the search cone. Otherwise, an all-sky search can be preformed:   
       ![](im/skymap_param.png)
-
-The result is as follows:
-
+The analysis uses the skymaps from
+- https://dcc.ligo.org/LIGO-P1800381/public for the first Gravitational Wave Transient Catalog (GWTC1) events as well as "PublicationSamples" skymaps from https://dcc.ligo.org/LIGO-P2000223/public/ for GWTC2 events and mixed-model skymaps from https://zenodo.org/record/5546663 for GWTC3. The original skymap data are data cubes corresponding to the probability density function (PDF) for event localisation in RA-DEC-distance parameter space. The online data analysis service presents the integral of the PDF in distance in the form of a contour plot:
 ![](im/skymap.png)
+
+The probability levels for the contour plot can be specified in the side parameter panel. The result display window has a number of buttons that allow to manipulate the skymap data products. The "Download" button provides a possibility to download the original skymap PDF for all the displayed events. The MMODA interface can be accessed from Python notebooks, using a an API. The API code for the skymap can be retreived by pressing the "API code" button. The result will be a piece of a Python code like this:
+
+
 
 Use Download button to get tar archive with raw MOC skymaps and event catalog ascii file. 
 
