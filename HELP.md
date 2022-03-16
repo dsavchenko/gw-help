@@ -10,10 +10,10 @@ Alternatively, the time intervals for the known gravitational wave events can be
 
 ## Skymap and catalog
 
-The interface allows to find known gravitational wave events within a specified time interval and visualise their sky localisations. This can be done by selecting the "skymap and catalog" in the side parameter panel. It is also possible to perform a cone search for events around a selected sky direction by selecting the "cone search" and specifying the angular width of the search cone. Otherwise, an all-sky search can be performed:   
+The interface allows to find known gravitational wave events within a specified time interval and visualise their sky localisations. This can be done by selecting the "skymap and catalog" in the side parameter panel. It is also possible to perform a cone search for events around a selected sky direction by selecting the "cone search" and specifying the angular width of the search cone. The event is treated as "in cone" if the contour of "Level threshold" level intersects with the given circle on the sky. Otherwise, an all-sky search can be performed:  
+
 ![Cone search parameters](im/conesearch_param.png)
 
-(WHAT IS THE "LEVEL THRESHOLD"?) 
 
 The analysis uses the skymaps from https://dcc.ligo.org/LIGO-P1800381/public for the first Gravitational Wave Transient Catalog (GWTC1) events as well as "PublicationSamples" skymaps from https://dcc.ligo.org/LIGO-P2000223/public/ for GWTC2 events and "mixed-model" skymaps from https://zenodo.org/record/5546663 for GWTC3. The original skymap data are fits files with the probability density function (PDF) for event localisation in the [MOC HEALPix](https://www.ivoa.net/documents/MOC/20190215/WD-MOC-1.1-20190215.pdf) format with the additional HEALPix layers representing the conditional mean and standard deviation of distance as a function of sky location. The online data analysis service presents the 2-d PDF in the form of a contour plot:
 ![](im/skymap.png)
